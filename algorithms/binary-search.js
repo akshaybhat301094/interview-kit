@@ -1,3 +1,16 @@
+/**
+ *                          Binary search
+ * The basic requirement for this is that the array should be sorted.
+ *  1. We first define a mid point of the array -
+ *  2. We then check if the mid point is greater or less than the provided value.
+ *  3. If less - then discard the left half of the array including the mid point
+ *  4. If more - then discard the right half of the array including the mid point
+ *  5. Find the mid point again
+ *
+ *  6. Continue doing this till the mid element is equal to the val else return -1
+ *
+ */
+
 (function (global) {
   'use strict';
 
