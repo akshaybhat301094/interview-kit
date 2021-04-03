@@ -1,10 +1,10 @@
 /**
- *                          MERGE SORT
- *  The basic logic for merge sort is to divide the array in smallest possible parts i.2 0 or 1 length
+ *                                          MERGE SORT
+ *  The basic logic for merge sort is to divide the array in smallest possible parts i.e 0 or 1 length
  *  and then merge them together while sorting them on the fly.
  *
  * For the ease of logic we will first make a merging logic which will take care of merging the 2 arrays
- * Then we will call merge sort recursively by dividing the provided array in 3 halfs until we get the
+ * Then we will call merge sort recursively by dividing the provided array in 2 halves until we get the
  * smallest possible unit and when the length of the array's is 0 or 1 we will merge them together.
  *
  *  eg:-        [6,5,4,3,2,1]  -- divide in middle
