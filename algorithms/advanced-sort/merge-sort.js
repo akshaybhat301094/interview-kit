@@ -62,3 +62,10 @@ function mergeSort(arr) {
 }
 
 console.log(mergeSort([9, 3, 4, 10, 1]));
+
+/**
+ * TIME COMPLEXITY
+ * Best - O(n log n)
+ * Average - O(n log n)
+ * Worst - O(n log n)
+ */
