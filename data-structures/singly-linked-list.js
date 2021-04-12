@@ -45,6 +45,30 @@ class SinglyLinkedList {
     this.size--;
     return this;
   }
+
+  shift() {
+    if (!this.head) throw 'List is empty';
+    if (this.size === 1) {
+      this.head = null;
+      this.tail = null;
+      this.size = 0;
+      return;
+    }
+    this.head = this.head.next;
+    this.size--;
+  }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.size++;
+    return this;
+  }
 }
 
 let linkedList = new SinglyLinkedList();
