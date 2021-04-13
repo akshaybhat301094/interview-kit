@@ -69,6 +69,73 @@ class SinglyLinkedList {
     this.size++;
     return this;
   }
+
+  get(idx) {
+    if (!idx || idx < 0 || idx >= this.size) return null;
+    let currentNode = this.head;
+    let counter = 0;
+    while (counter != idx) {
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
+
+  // to update the node value at a particular index
+  set(idx, val) {
+    let nodeInList = this.get(idx);
+    if (nodeInList) {
+      nodeInList.val = val;
+      return true;
+    }
+    return false;
+  }
+
+  insert(idx, val) {
+    if (idx < 0 || idx > this.size) return false;
+    if (idx === 0) return !!this.unshift(val);
+    if (idx === this.size) return !!this.push(val);
+    let previousNode = this.get(idx - 1);
+
+    let newNode = new Node(val);
+    let temp = previousNode.next;
+    previousNode.next = newNode;
+    newNode.next = temp;
+    this.size++;
+    return true;
+  }
+
+  remove(idx) {
+    if (idx < 0 || idx > this.size) return false;
+    if (idx == this.size - 1) return !!this.pop();
+    if (idx == 0) return !!this.shift();
+
+    let previousNode = this.get(idx - 1);
+    let removedNode = previousNode.next;
+    previousNode.next = removedNode.next;
+    this.size--;
+    return true;
+  }
+
+  reverse() {
+    if (this.size === 1) return this;
+    if (!this.head) return false;
+
+    let currentNode = this.head;
+    let prev = null;
+    let next;
+    this.head = this.tail;
+    this.tail = currentNode;
+
+    for (let i = 0; i < this.size; i++) {
+      next = currentNode.next;
+      currentNode.next = prev;
+      prev = currentNode;
+      currentNode = next;
+    }
+
+    return this;
+  }
 }
 
 let linkedList = new SinglyLinkedList();
