@@ -30,16 +30,18 @@ function findLoopStart(sll) {
     slow = slow.next;
     fast = fast.next.next;
 
-    if (fast == slow) {
-      // this means it is a loop but in this case we have to return the starting node
-      slow = sll.head;
-      while (slow != fast) {
-        slow = slow.next;
-        fast = fast.next;
-      }
-      return slow;
-    }
+    // this means it is a loop but in this case we have to return the starting node
+    if (fast == slow) break;
   }
 
-  return false;
+  if (!fast || !fast.next) return null;
+
+  fast = head;
+
+  while (fast != slow) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+
+  return slow;
 }
