@@ -37,7 +37,7 @@ function isBst(root) {
 
 function isBst(root) {
   if (!root) return false;
-
+  // can use -Infinity and Infinity as well
   return dfs(root, Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER);
 }
 
