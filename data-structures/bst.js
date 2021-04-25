@@ -4,6 +4,14 @@
  *      TIME COMPLEXITY
  *  Insertion - O(log n)
  *  Searching - O(log n)
+ *
+ *
+ * This file also contains tree traversal methods which can be used with any tree
+ * BFS - Breadth first search
+ * DFS - Depth first search
+ *      - DFS in order -> left, root, right
+ *      - DFS pre order -> root, left, right
+ *      - DFS post order -> left, right, root
  */
 
 class Node {
