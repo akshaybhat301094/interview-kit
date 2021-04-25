@@ -81,4 +81,59 @@ class BST {
       return current;
     }
   }
+
+  bfs() {
+    let result = [],
+      queue = [],
+      node = null;
+
+    queue.push(this.root);
+
+    while (queue.length) {
+      node = queue.shift();
+      result.push(node);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+
+    return result;
+  }
+
+  // traverse root first, then left, then right;
+  dfsPreOrder() {
+    let result = [];
+    function traverse(node, arr) {
+      arr.push(node);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root, result);
+    return result;
+  }
+
+  // traverse first to left then to right then root - more like bottom up, the root     element is added at last
+  dfsPostOrder() {
+    let result = [];
+
+    function traverse(node, arr) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      arr.push(node);
+    }
+    traverse(this.root, result);
+    return result;
+  }
+
+  // traverse all left first then node then right
+  dfsInOrder() {
+    let result = [];
+
+    function traverse(node, arr) {
+      if (node.left) traverse(node.left);
+      arr.push(node);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root, result);
+    return result;
+  }
 }
