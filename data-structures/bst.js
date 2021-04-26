@@ -1,5 +1,12 @@
 /**
- *  Implementaton of BST without recursion
+ *  Trees are non-linear data structures that contain a root and child nodes
+ *
+ *  Binary trees can have values of any type but at most 2 children for each parent
+ *
+ *  In BST every node to left of the parent is less than it's value and every node to
+ *  the right is greater
+ *
+ * Implementaton of BST without recursion
  *
  *      TIME COMPLEXITY
  *  Insertion - O(log n)
@@ -90,6 +97,12 @@ class BST {
     }
   }
 
+  /**
+   *  Tree traversal methods start from here
+   *  can be used for any tree with some minor tweaks the base logic remains the same
+   */
+
+  // BFS- space complexity might be more based on structure of the tree
   bfs() {
     let result = [],
       queue = [],
@@ -108,6 +121,7 @@ class BST {
   }
 
   // traverse root first, then left, then right;
+  // can be used to "export" a tree structure so that it is easily reconstructed/copied
   dfsPreOrder() {
     let result = [];
     function traverse(node, arr) {
@@ -133,6 +147,7 @@ class BST {
   }
 
   // traverse all left first then node then right
+  // for bst we can use this to check if the result is in order it always returns sorted data
   dfsInOrder() {
     let result = [];
 
