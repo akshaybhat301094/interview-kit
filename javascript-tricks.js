@@ -23,3 +23,15 @@ arr.map(String); // -> will return ["1", "2", "3"]
 let a = ~~10.4; // -> will return 10
 // one issue with this approach though for negative numbers it will not round of the value
 // eg ~~(-5.5) will return -5 but Math.floor(-5.5) returns -6
+
+// param validataion example
+const isRequired = () => {
+  throw new Error('param is required');
+};
+
+const print = (num = isRequired()) => {
+  console.log(`printing ${num}`);
+};
+
+print(2); // outpup: printing 2
+print(); // output : Error: param is required
