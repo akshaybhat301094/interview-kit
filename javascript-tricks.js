@@ -50,28 +50,28 @@ const handleSaveCalculation = ({ key }) => {
 
 // Alternate of using Math.floor
 let a = ~~10.4; // -> will return 10
-// one issue with this approach though for negative numbers it will not round off the value
+// one issue with this approach -> for negative numbers it will not round off the value
 // eg ~~(-5.5) will return -5 but Math.floor(-5.5) returns -6
 
 let arr = [1, 2, 3, 4, 5];
 let idx = arr.indexOf(6);
 
-// Traditional
+// Traditional way of checking if the item is present in the list
 if (idx !== -1) {
   // Do something
 }
 
-// Alternate
+// Alternate way using bitwise not operator
 if (Boolean(~idx)) {
   // Do Something
 }
 
-// Another alternate
+// Another alternate using bitwise xor operator
 if (Boolean(idx ^ -1)) {
   // Do something
 }
 
-// even or odd
+// check if number is even or odd
 
 let num = 34;
 console.log(num & 1); // returns 0 -> even
