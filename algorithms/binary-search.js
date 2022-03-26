@@ -12,21 +12,20 @@
  */
 
 (function (global) {
-  'use strict';
+  "use strict";
 
-  function binarySearch(arr, val) {
+  function binarySearch(arr, target) {
     let start = 0;
     let end = arr.length - 1;
-    
 
-    if (val > arr[end] || val < arr[start]) {
+    if (target > arr[end] || target < arr[start]) {
       return -1;
     }
 
     while (start <= end) {
       let mid = ~~((start + end) / 2);
-      if(arr[mid] === val) return mid;
-      if (val < arr[mid]) end = mid - 1;
+      if (arr[mid] === target) return mid;
+      if (target < arr[mid]) end = mid - 1;
       else start = mid + 1;
     }
 
@@ -34,4 +33,4 @@
   }
 
   global.binarySearch = binarySearch;
-})(typeof window === 'undefined' ? module.exports : window);
+})(typeof window === "undefined" ? module.exports : window);
