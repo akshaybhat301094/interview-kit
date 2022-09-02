@@ -78,3 +78,10 @@ console.log(num & 1); // returns 0 -> even
 
 let num = 35;
 console.log(num & 1); // returns 1 -> odd
+
+
+// Make a function sleep for desired duration
+
+const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+
+sleep(500).then(() => console.log('This will be logged after 500ms'));
